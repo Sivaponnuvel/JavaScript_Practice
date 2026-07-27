@@ -44,3 +44,31 @@ console.log("Salary:", salary);
 console.log("Type:",typeof salary);
 
 
+// 🔹 Question 2 – Check Variable Types
+// Write a JavaScript program that creates the following variables and prints only their data types.
+// Variables
+// 100
+// "JavaScript"
+// false
+// undefined
+// Expected Output
+// number
+// string
+// boolean
+// undefined
+// ⚠️ Conditions
+// ✅ Create four variables
+// ✅ Use typeof
+// ✅ Print only the data types
+// ❌ Don't print the variable values
+// ❌ Don't hardcode the answers
+
+let score = 100;
+let course = "JavaScript";
+let isCourse = false;
+let user = undefined;
+
+console.log(typeof score);
+console.log(typeof course);
+console.log(typeof isCourse);
+console.log(typeof user);
