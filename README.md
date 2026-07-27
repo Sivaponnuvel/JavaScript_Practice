@@ -8,6 +8,7 @@ I am consistently improving my JavaScript fundamentals, logical thinking, and pr
 ## 📅 Progress Tracker
 
 * Day01 – Completed ✅
+* Day02 – Completed ✅
 
 ---
 
