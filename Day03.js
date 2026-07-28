@@ -40,3 +40,40 @@ console.log("Modulus:", num1 % num2);
 console.log("Exponentiation:", num1 ** num2);
 
 
+// 🔹 Question 2 – Assignment Operators
+// Write a JavaScript program using assignment operators.
+// Program Flow
+// Create a variable:
+// let number = 10;
+// Perform the following operations in order:
+// number += 5
+// number -= 3
+// number *= 2
+// number /= 4
+// Print the value after each operation.
+// Expected Output
+// After += : 15
+// After -= : 12
+// After *= : 24
+// After /= : 6
+// ⚠️ Conditions
+// ✅ Use one variable only
+// ✅ Use +=, -=, *=, /=
+// ✅ Print the value after every operation
+// ❌ Don't create extra variables
+// ❌ Don't calculate manually
+// Example (❌ Wrong):
+// console.log(15);
+// Instead:
+// number += 5;
+// console.log(number);
+
+let number = 10;
+number += 5;
+console.log("After += :",number);
+number -= 3;
+console.log("After -= :",number);
+number *= 2;
+console.log("After *= :",number);
+number /= 4;
+console.log("After /= :",number);
