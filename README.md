@@ -10,6 +10,7 @@ I am consistently improving my JavaScript fundamentals, logical thinking, and pr
 * Day01 – Completed ✅
 * Day02 – Completed ✅
 * Day03 – Completed ✅
+* Day04 – Completed ✅
 
 ---
 
