@@ -31,3 +31,28 @@ else{
 }
 
 
+// 🔹 Question 2 – Check Account Access
+// Write a JavaScript program to check whether a user's account is active.
+// Program Flow
+// Create the following variable:
+// isBlocked = false
+// If the account is not blocked, display:
+// Access Granted
+// Otherwise, display:
+// Access Denied
+// ⚠️ Conditions
+// ✅ Use the Logical NOT (!) operator
+// ✅ Use one if...else statement
+// ✅ Use console.log()
+// ❌ Don't compare using == true or == false
+// ❌ Don't hardcode the output
+// 💡 Hint: The NOT operator reverses a boolean value.
+
+let isBlocked = false;
+
+if (!isBlocked){
+    console.log("Access Granted");
+}
+else{
+    console.log("Access Denied");
+}
