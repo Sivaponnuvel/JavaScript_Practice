@@ -33,3 +33,39 @@ else{
 }
 
 
+// 🔹 Question 2 – ATM Withdrawal (Nested if)
+// Write a JavaScript program to check whether a user can withdraw money from an ATM.
+// Program Flow
+// Create the following variables:
+// hasCard = true
+// pinCorrect = true
+// Rules:
+// If the user has an ATM card:
+// Then check whether the PIN is correct.
+// If correct, display:
+// Withdrawal Successful
+// Otherwise, display:
+// Incorrect PIN
+// If the user doesn't have an ATM card, display:
+// No ATM Card
+// ⚠️ Conditions
+// ✅ Use nested if
+// ✅ Use console.log()
+// ❌ Don't use &&
+// ❌ Don't use else if
+// 💡 Hint: First check one condition. Only if it's true should you check the second condition.
+
+let hasCard = true;
+let pinCorrect = true;
+
+if (hasCard){
+    if (pinCorrect){
+        console.log("Withdrawal Successful");
+    }
+    else{
+        console.log("Incorrect PIN");
+    }
+}
+else{
+    console.log("No ATM Card");
+}
