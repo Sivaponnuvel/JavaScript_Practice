@@ -59,3 +59,52 @@ switch (day){
 }
 
 
+// 🔹 Question 2 – Simple Calculator
+// Write a JavaScript program to perform a calculation based on an operator.
+// Program Flow
+// Create the following variables:
+// num1 = 20
+// num2 = 10
+// operator = "+"
+// Perform the corresponding operation based on the operator.
+// Supported operators:
+// +
+// -
+// *
+// /
+// If the operator is invalid, display:
+// Invalid Operator
+// Example Output
+// 30
+// ⚠️ Conditions
+// ✅ Use switch
+// ✅ Use break for every case
+// ✅ Use default
+// ✅ Use console.log()
+// ❌ Don't use if...else
+// 💡 Hint: Compare the operator variable in each case.
+
+let num1 = 20;
+let num2 = 10;
+let operator = "+";
+
+switch (operator){
+    case "+":
+        console.log(num1 + num2);
+        break;
+
+    case "-":
+        console.log(num1 - num2);
+        break;
+
+    case "*":
+        console.log(num1 * num2);
+        break;
+
+    case "/":
+        console.log(num1 / num2);
+        break;
+
+    default:
+        console.log("Invalid Operator")
+}
