@@ -84,3 +84,43 @@ switch (month){
 }
 
 
+// 🔹 Question 2 – Traffic Signal
+// Write a JavaScript program to display the action based on the traffic signal color.
+// Program Flow
+// Create a variable:
+// signal = "red"
+// Display:
+// "red" → Stop
+// "yellow" → Get Ready
+// "green" → Go
+// For any other value, display:
+// Invalid Signal
+// Example Output
+// Stop
+// ⚠️ Conditions
+// ✅ Use switch
+// ✅ Use break for every case
+// ✅ Use default
+// ✅ Use console.log()
+// ❌ Don't use if...else
+// 💡 Hint: Since the variable contains text, each case should also use string values.
+
+
+let signal = "red";
+
+switch(signal){
+    case "red":
+        console.log("Stop");
+        break;
+
+    case "yellow":
+        console.log("Get Ready");
+        break;
+
+    case "green":
+        console.log("Go");
+        break;
+
+    default:
+        console.log("Invalid Signal");
+}
