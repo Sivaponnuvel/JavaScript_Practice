@@ -15,6 +15,7 @@ I am consistently improving my JavaScript fundamentals, logical thinking, and pr
 * Day06 – Completed ✅
 * Day07 – Completed ✅
 * Day08 – Completed ✅
+* Day09 – Completed ✅
 
 ---
 
