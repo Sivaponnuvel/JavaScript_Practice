@@ -32,3 +32,36 @@ do{
 } while(i <= 10);
 
 
+// 🔹 Question 2 – Print Even Numbers from 2 to 20
+// Write a JavaScript program to print all even numbers from 2 to 20 using a do...while loop.
+// Program Flow
+// Create a variable with the starting value.
+// Use a do...while loop.
+// Print only even numbers.
+// Continue until 20.
+// Example Output
+// 2
+// 4
+// 6
+// 8
+// 10
+// 12
+// 14
+// 16
+// 18
+// 20
+// ⚠️ Conditions
+// ✅ Use a do...while loop
+// ✅ Use console.log()
+// ✅ Update the loop variable inside the loop
+// ❌ Don't use for
+// ❌ Don't use while
+// ❌ Don't write the numbers manually
+// 💡 Hint: You can use the % operator to check if a number is even.
+
+let num = 2;
+
+do{
+    console.log(num);
+    num += 2;
+}while(num <= 20);
