@@ -27,3 +27,29 @@ for (let i = 1; i <= 10; i++) {
 }
 
 
+// 🔹 Question 2 – Nested Loop: Print Number Pattern
+// Write a JavaScript program to print the following pattern using nested for loops.
+// Example Output
+// 1
+// 12
+// 123
+// 1234
+// 12345
+// ⚠️ Conditions
+// ✅ Use nested for loops
+// ✅ Use console.log()
+// ✅ Outer loop should control the rows
+// ✅ Inner loop should control the numbers in each row
+// ❌ Don't write each row manually
+// ❌ Don't use arrays
+// ❌ Don't use while
+// 💡 Hint: Think about how many numbers should be printed in each row.
+// Important: For this question, you'll need to understand how to build a row before printing it.
+
+for (let i = 1; i <= 5; i++){
+    let pattern = "";
+    for (let j = 1; j <= i; j++){
+        pattern += j;
+    }
+    console.log(pattern);
+}
