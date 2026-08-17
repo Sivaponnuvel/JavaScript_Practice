@@ -37,3 +37,42 @@ function getGrade(marks){
 console.log(getGrade(82));
 
 
+// 🔹 Question 2 – Calculate Discount Using Function
+// Write a JavaScript program to create a function named calculateDiscount that accepts the purchase amount and returns the discount amount.
+// Conditions
+// Amount >= 5000 → 20% discount
+// Amount >= 3000 → 10% discount
+// Amount >= 1000 → 5% discount
+// Amount < 1000 → No discount
+// Call the function with 4000 and display the returned discount amount.
+// Example Output
+// 400
+// ⚠️ Conditions
+// ✅ Use function keyword
+// ✅ Accept one parameter
+// ✅ Use if...else if...else
+// ✅ Use return
+// ✅ Use percentage calculation
+// ✅ Display the returned value using console.log()
+// ❌ Don't use global variables
+// ❌ Don't hardcode 400
+// ❌ Don't use arrow function
+// 💡 Hint: For 10% discount:
+// amount * 10 / 100
+
+function calculateDiscount(amount){
+    if (amount >= 5000){
+        return (amount * 20) / 100;
+    }
+    else if(amount >= 3000){
+        return (amount * 10) / 100;
+    }
+    else if(amount >= 1000){
+        return (amount * 5) / 100;
+    }
+    else{
+        return 0;
+    }
+}
+
+console.log(calculateDiscount(4000));
