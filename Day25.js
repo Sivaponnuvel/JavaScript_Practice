@@ -27,3 +27,38 @@ function convertLowercase(string){
 console.log(convertLowercase("JAVASCRIPT"));
 
 
+// 🔹 Question 2 – Check String Contains a Word
+// Write a JavaScript program to create a function named checkWord that accepts a string and checks whether the string contains the word "JavaScript".
+// Program Flow
+// Create a function named checkWord
+// Accept one parameter
+// Check whether the string contains "JavaScript"
+// If it contains → return "Word Found"
+// Otherwise → return "Word Not Found"
+// Call the function with:
+// "I am learning JavaScript"
+// Display the returned result using console.log()
+// Example Output
+// Word Found
+// ⚠️ Conditions
+// ✅ Use function keyword
+// ✅ Accept one parameter
+// ✅ Use if...else
+// ✅ Use return
+// ✅ Use a string method to check whether "JavaScript" exists
+// ✅ Use console.log()
+// ❌ Don't use global variables
+// ❌ Don't hardcode "Word Found" outside the function
+// ❌ Don't use arrow function
+// 💡 Hint: String-kulla oru particular word irukka-nu check panna .includes() method useful-a irukkum.
+
+function checkWord(sentence){
+    if(sentence.includes("JavaScript")){
+        return "Word Found";
+    }
+    else{
+        return "Word Not Found";
+    }
+}
+
+console.log(checkWord("I am learning JavaScript"));
