@@ -31,3 +31,28 @@ function capitalizeFirst(word){
 console.log(capitalizeFirst("javascript"));
 
 
+// 🔹 Question 2 – Count Characters Without Spaces
+// Create a function named countCharacters that accepts a string and returns the number of characters excluding spaces.
+// Call the function with:
+// "Hello World"
+// Example Output
+// 10
+// ⚠️ Conditions
+// ✅ Use function
+// ✅ One parameter
+// ✅ Use .replace()
+// ✅ Use .length
+// ✅ Use return
+// ✅ Use console.log()
+// ❌ Don't manually count the characters
+// ❌ Don't use arrays
+// ❌ Don't use arrow function
+// 💡 Hint:
+// First remove the spaces from the string using .replace(), then find the .length.
+
+function countCharacters(sentence){
+    let result = sentence.replace(/ /g, "");
+    return result.length;
+}
+
+console.log(countCharacters("Hello World"));
