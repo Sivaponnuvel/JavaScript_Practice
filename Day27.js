@@ -40,3 +40,27 @@ function checkFirstLast(word){
 console.log(checkFirstLast("level"));
 
 
+// 🔹 Question 2 – Replace a Word in a String
+// Create a function named replaceWord that accepts a sentence and returns the sentence after replacing "Python" with "JavaScript".
+// Call the function with:
+// "I am learning Python"
+// Example Output
+// I am learning JavaScript
+// ⚠️ Conditions
+// ✅ Use function
+// ✅ Accept one parameter
+// ✅ Use .replace()
+// ✅ Use return
+// ✅ Use console.log()
+// ❌ Don't hardcode the final output
+// ❌ Don't use arrow function
+// 💡 Hint:
+// .replace() needs two values:
+// What you want to find
+// What you want to replace it with
+
+function replaceWord(sentence){
+    return sentence.replace("Python", "JavaScript");
+}
+
+console.log(replaceWord("I am learning Python"));
