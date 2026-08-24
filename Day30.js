@@ -25,3 +25,31 @@ colors.push("Yellow");
 console.log(colors);
 
 
+// 🔹 Question 2 – Remove Elements Using .pop()
+// Create an array named numbers with:
+// 10
+// 20
+// 30
+// 40
+// Then:
+// Remove the last element using .pop()
+// Display the removed element.
+// Display the remaining array.
+// Example Output
+// 40
+// [10, 20, 30]
+// ⚠️ Conditions
+// ✅ Use let
+// ✅ Use .pop()
+// ✅ Store the removed element in a variable
+// ✅ Use console.log()
+// ❌ Don't manually remove 40
+// ❌ Don't use .splice()
+// 💡 Hint: .pop() not only removes the last element, it also returns the removed value.
+
+let numbers = [10, 20, 30, 40];
+
+let remove = numbers.pop();
+
+console.log(remove);
+console.log(numbers);
