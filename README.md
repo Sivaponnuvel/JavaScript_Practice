@@ -36,6 +36,7 @@ I am consistently improving my JavaScript fundamentals, logical thinking, and pr
 * Day27 – Completed ✅
 * Day28 – Completed ✅
 * Day29 – Completed ✅
+* Day30 – Completed ✅
 
 ---
 
