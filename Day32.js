@@ -21,3 +21,28 @@ let cities =  ['Chennai', "Mumbai", "Delhi", "Bangalore", "Kolkata"];
 console.log(cities.length);
 
 
+// 🔹 Question 2 – Update an Array Element
+// Create an array named languages containing:
+// "Python"
+// "Java"
+// "C++"
+// Then change "Java" to "JavaScript".
+// Finally, display the updated array.
+// Example Output
+// ["Python", "JavaScript", "C++"]
+// ⚠️ Conditions
+// ✅ Use let
+// ✅ Use array indexing
+// ✅ Update the existing element
+// ✅ Use console.log()
+// ❌ Don't create a new array
+// ❌ Don't use .push() or .pop()
+// ❌ Don't directly create the array with "JavaScript"
+// 💡 Hint: "Java" is already inside the array. Find its index position and assign the new value using =.
+// Code panni anuppu 👍 நான் check pannuren.
+
+let languages = ["Python", "Java", "C++"];
+
+languages[1] = "JavaScript";
+
+console.log(languages);
