@@ -17,3 +17,20 @@ let result = fruits.slice(1, 4);
 console.log(result);
 
 
+// Question 2 – Copy an Array Using .slice()
+// Create:
+// let numbers = [10, 20, 30, 40, 50];
+// Using .slice(), create a copy of the entire array and store it in a new variable.
+// Then display the copied array.
+// Expected Output:
+// [10, 20, 30, 40, 50]
+// ⚠️ Conditions:
+// ✅ Use let
+// ✅ Use .slice()
+// ❌ Don't manually create the same array again
+
+let numbers = [10, 20, 30, 40, 50];
+
+let copy = numbers.slice();
+
+console.log(copy);
