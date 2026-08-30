@@ -21,3 +21,25 @@ function greet(name){
 console.log(greet("Siva"));
 
 
+// 🔹 Question 2 – Arrow Function
+// Create an arrow function named multiply that takes two numbers.
+// Then:
+// Pass 10 and 5
+// Multiply both numbers
+// Return the result
+// Display the result.
+// Expected Output:
+// 50
+// ⚠️ Conditions:
+// ✅ Use const
+// ✅ Use arrow function =>
+// ✅ Use two parameters
+// ✅ Use return
+// ✅ Use console.log()
+// ❌ Don't use normal function syntax
+
+const multiply = (a, b)=>{
+    return a * b;
+}
+
+console.log(multiply(10, 5));
