@@ -25,3 +25,29 @@ fruits.forEach((fruits) => {
 })
 
 
+// 🔹 Question 2 – Print Numbers with 2
+// Create:
+// let numbers = [5, 10, 15, 20];
+// Using forEach() with an arrow function:
+// Go through each number.
+// Multiply each number by 2.
+// Display the result.
+// Expected Output:
+// 10
+// 20
+// 30
+// 40
+// ⚠️ Conditions:
+// ✅ Use let
+// ✅ Use .forEach()
+// ✅ Use arrow function =>
+// ✅ Use console.log()
+// ❌ Don't use map() yet
+// ❌ Don't use for loop
+// ❌ Don't create a new array
+
+let numbers = [5, 10, 15, 20];
+
+numbers.forEach((numbers) =>{
+    console.log(numbers * 2);
+})
