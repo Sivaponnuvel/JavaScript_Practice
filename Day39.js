@@ -26,3 +26,33 @@ const result = numbers.map((number) => {
 console.log(result);
 
 
+// 🔹 Question 2 – Convert Names to Uppercase
+// Create:
+// let names = ["siva", "kumar", "vijay", "arun"];
+// Using map() with an arrow function:
+// Convert every name to uppercase
+// Store the result in a new variable
+// Display the new array
+// Expected Output:
+// ["SIVA", "KUMAR", "VIJAY", "ARUN"]
+// 💡 Hint:
+// You can use:
+// name.toUpperCase()
+// ⚠️ Conditions:
+// ✅ Use let
+// ✅ Use .map()
+// ✅ Use arrow function =>
+// ✅ Store the result in a new variable
+// ✅ Use console.log()
+// ❌ Don't use forEach()
+// ❌ Don't use for loop
+// ❌ Don't manually write the uppercase names
+// ❌ Don't modify the original array
+
+let names = ["siva", "kumar", "vijay", "arun"];
+
+const answer = names.map((name) => {
+    return name.toUpperCase();
+})
+
+console.log(answer);
