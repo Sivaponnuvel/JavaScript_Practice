@@ -27,3 +27,34 @@ const result = numbers.filter((number)=>{
 console.log(result);
 
 
+// 🔹 Question 2 – Filter Names by Length
+// Create:
+// let names = ["Siva", "Kumar", "Arun", "Vijay", "Raj"];
+// Using filter() with an arrow function:
+// Select names whose length is greater than 4
+// Store the result in a new variable
+// Display the new array
+// Expected Output:
+// ["Kumar", "Vijay"]
+// 💡 Hint:
+// You can check the length using:
+// name.length > 4
+// ⚠️ Conditions:
+// ✅ Use let
+// ✅ Use .filter()
+// ✅ Use arrow function =>
+// ✅ Use .length
+// ✅ Store the result in a new variable
+// ✅ Use console.log()
+// ❌ Don't use forEach()
+// ❌ Don't use map()
+// ❌ Don't use for loop
+// ❌ Don't manually create the result array
+
+let names = ["Siva", "Kumar", "Arun", "Vijay", "Raj"];
+
+const answer = names.filter((name)=>{
+    return name.length > 4;
+})
+
+console.log(answer);
