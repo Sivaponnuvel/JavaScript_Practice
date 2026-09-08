@@ -30,3 +30,32 @@ const result = numbers.every((number) => {
 console.log(result);
 
 
+// 🔹 Question 2 – Check All Names Have Length 4+
+// Create:
+// let names = ["Siva", "Arun", "Ravi", "Kavi"];
+// Using every() with an arrow function:
+// Check whether all names have at least 4 characters
+// Store the result in a new variable
+// Display the result
+// Expected Output:
+// true
+// ⚠️ Conditions:
+// ✅ Use let
+// ✅ Use .every()
+// ✅ Use arrow function =>
+// ✅ Use .length
+// ✅ Store the result in a new variable
+// ✅ Use console.log()
+// ❌ Don't use some()
+// ❌ Don't use filter()
+// ❌ Don't use find()
+// ❌ Don't use forEach()
+// ❌ Don't manually check each name
+
+let names = ["Siva", "Arun", "Ravi", "Kavi"];
+
+const answer = names.every((name) => {
+    return name.length >= 4;
+});
+
+console.log(answer);
