@@ -52,6 +52,7 @@ I am consistently improving my JavaScript fundamentals, logical thinking, and pr
 * Day43 – Completed ✅
 * Day44 – Completed ✅
 * Day45 – Completed ✅
+* Day46 – Completed ✅
 
 ---
 
