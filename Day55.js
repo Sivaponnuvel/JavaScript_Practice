@@ -33,3 +33,43 @@ user.experience = "Fresher";
 console.log(user);
 
 
+// 🟢 Question 2 – E-commerce Product
+// An e-commerce application has this product object:
+// let product = {
+//     name: "Laptop",
+//     price: 55000,
+//     category: "Electronics",
+//     stock: 10,
+//     discount: 2000
+// };
+// Do the following:
+// Remove the discount property.
+// Add a new property brand with value "Dell".
+// Change stock to 8.
+// Print the complete product object.
+// Print the brand separately.
+// Expected Output:
+// {
+//   name: "Laptop",
+//   price: 55000,
+//   category: "Electronics",
+//   stock: 8,
+//   brand: "Dell"
+// }
+// Dell
+// Condition: Use delete to remove the property.
+
+let product = {
+    name: "Laptop",
+    price: 55000,
+    category: "Electronics",
+    stock: 10,
+    discount: 2000
+};
+
+delete product.discount;
+product.brand = "Dell";
+product.stock = 8
+
+console.log(product);
+console.log(product.brand);
