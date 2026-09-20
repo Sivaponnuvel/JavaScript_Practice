@@ -31,3 +31,37 @@ const account = new BankAccount("Sivaponnuvel", 10000);
 account.deposit(5000);
 
 
+// 🟢 Question 2 – Shopping Cart
+// Create a class called ShoppingCart.
+// The constructor should create an empty array called items.
+// Create a method called addItem(name, price) that:
+// Adds the product as an object inside the items array.
+// Prints the added product name.
+// Add these two products:
+// Laptop - ₹55000
+// Mouse - ₹1000
+// Then print the complete items array.
+// Expected Output:
+// Added: Laptop
+// Added: Mouse
+// [
+//   { name: "Laptop", price: 55000 },
+//   { name: "Mouse", price: 1000 }
+// ]
+// Condition: Use this.items.push() to add each product.
+
+class ShoppingCart{
+    constructor(){
+        this.items = [];
+    };
+    addItem(name, price){
+        this.items.push({name: name, price: price});
+        console.log(`Added: ${name}`);
+    };
+}
+
+const cart = new ShoppingCart();
+
+cart.addItem("Laptop", 55000);
+cart.addItem("Mouse", 1000);
+console.log(cart.items);
