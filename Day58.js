@@ -45,3 +45,53 @@ const employee = new Employee("Sivaponnuvel", "Python Developer", 30000);
 employee.displayDetails();
 employee.increaseSalary(5000);
 
+
+// 🟢 Question 2 – Bank Account Withdrawal
+// Create a class called BankAccount.
+// The constructor should accept:
+// accountHolder
+// balance
+// Create two methods:
+// deposit(amount) → adds money to the balance.
+// withdraw(amount) → subtracts money only if sufficient balance is available.
+// Create:
+// Account Holder: Sivaponnuvel
+// Balance: 20000
+// Then perform:
+// account.deposit(5000);
+// account.withdraw(8000);
+// Expected final balance:
+// Deposit: ₹5000
+// Current Balance: ₹25000
+// Withdrawal: ₹8000
+// Current Balance: ₹17000
+// If the withdrawal amount is greater than the balance, print:
+// Insufficient Balance
+// Condition: Use this.balance for both deposit and withdrawal.
+
+class BankAccount{
+    constructor(accountHolder, balance){
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    };
+    deposit(amount){
+        this.balance += amount;
+        console.log(`Deposit: ₹${amount}`);
+        console.log(`Current Balance: ₹${this.balance}`);
+    };
+    withdraw(amount){
+        if (this.balance < amount){
+            console.log("Insufficient Balance");
+        }
+        else{
+            this.balance -= amount;
+            console.log(`Withdrawal: ₹${amount}`);
+            console.log(`Current Balance: ₹${this.balance}`);
+        }
+    };
+}
+
+const account = new BankAccount("Sivaponnuvel", 20000);
+
+account.deposit(5000);
+account.withdraw(8000);
