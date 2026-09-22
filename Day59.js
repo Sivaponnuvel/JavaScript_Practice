@@ -27,3 +27,28 @@ console.log(jsonData);
 console.log(typeof(jsonData));
 
 
+// 🟢 Question 2 – JSON Data to Object
+// You receive this JSON data from an API:
+// let jsonData = '{"name":"Sivaponnuvel","role":"Python Developer","experience":1}';
+// Do the following:
+// Convert the JSON string into a JavaScript object using JSON.parse().
+// Store it in a variable called user.
+// Print the user's name.
+// Print the user's role.
+// Print the user's experience.
+// Print the data type of user.
+// Expected Output:
+// Sivaponnuvel
+// Python Developer
+// 1
+// object
+// Condition: Use JSON.parse().
+
+let jsonData1 = '{"name":"Sivaponnuvel","role":"Python Developer","experience":1}';
+
+let user1 = JSON.parse(jsonData1);
+
+console.log(user1.name);
+console.log(user1.role);
+console.log(user1.experience);
+console.log(typeof(user1));
