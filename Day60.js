@@ -34,3 +34,28 @@ console.log(product[1].price);
 console.log(product);
 
 
+// 🟢 Question 2 – Convert Cart Data to JSON
+// You have a shopping cart:
+// let cart = [
+//     { name: "Laptop", price: 55000, quantity: 1 },
+//     { name: "Mouse", price: 1000, quantity: 2 }
+// ];
+// Do the following:
+// Convert the cart array into a JSON string using JSON.stringify().
+// Store it in a variable called jsonCart.
+// Print jsonCart.
+// Print the data type of jsonCart.
+// Expected Output:
+// [{"name":"Laptop","price":55000,"quantity":1},{"name":"Mouse","price":1000,"quantity":2}]
+// string
+// Condition: Use JSON.stringify().
+
+let cart = [
+    { name: "Laptop", price: 55000, quantity: 1 },
+    { name: "Mouse", price: 1000, quantity: 2 }
+];
+
+let jsonCart = JSON.stringify(cart);
+
+console.log(jsonCart);
+console.log(typeof(jsonCart));
