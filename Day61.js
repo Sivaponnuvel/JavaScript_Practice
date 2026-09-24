@@ -20,3 +20,24 @@ console.log(joiningDate.getMonth());
 console.log(joiningDate.getDate());
 
 
+// 🟢 Question 2 – Current Date & Time
+// Create a Date object representing the current date and time.
+// Store it in:
+// let currentDate
+// Then print:
+// Current year
+// Current month
+// Current date
+// Current day
+// Current hour
+// Current minute
+// Use JavaScript's built-in Date methods.
+
+let currentDate = new Date();
+
+console.log(currentDate.getFullYear());
+console.log(currentDate.getMonth());
+console.log(currentDate.getDate());
+console.log(currentDate.getDay());
+console.log(currentDate.getHours());
+console.log(currentDate.getMinutes());
