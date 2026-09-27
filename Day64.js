@@ -26,3 +26,24 @@ console.log(sumNumbers(5));
 console.log(sumNumbers(10));
 
 
+// 🟢 Question 2 – Reverse a String
+// Create a recursive function called reverseString().
+// The function should take a string and return the string in reverse order.
+// Example:
+// reverseString("hello");
+// Expected Output:
+// "olleh"
+// Test with:
+// reverseString("javascript");
+// Expected Output:
+// "tpircsavaj"
+
+function reverseString(name) {
+    if(name === ""){
+        return "";
+    }
+    return reverseString(name.slice(1)) + name[0];
+}
+
+console.log(reverseString("hello"));
+console.log(reverseString("javascript"));
