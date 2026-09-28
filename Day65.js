@@ -51,3 +51,43 @@ const developer1 = new Developer("Siva", 30000, "JavaScript");
 developer1.displayInfo();
 
 
+// 🟢 Question 2 – Method Overriding
+// Create a parent class called Vehicle.
+// Create a method:
+// start()
+// that prints:
+// Vehicle is starting
+// Create a child class called Car that extends Vehicle.
+// Inside Car, override the start() method so that it prints:
+// Car engine is starting
+// Create objects:
+// let vehicle1 = new Vehicle();
+// let car1 = new Car();
+// Call:
+// vehicle1.start();
+// car1.start();
+// Expected Output:
+// Vehicle is starting
+// Car engine is starting
+// Conditions:
+// Use extends ✅
+// Override the start() method in Car ✅
+// Do not create a separate function outside the classes ✅
+
+class Vehicle{
+    start(){
+        console.log("Vehicle is starting");
+    };
+}
+
+class Car extends Vehicle{
+    start(){
+        console.log("Car engine is starting");
+    };
+}
+
+let vehicle1 = new Vehicle();
+let car1 = new Car();
+
+vehicle1.start();
+car1.start();
