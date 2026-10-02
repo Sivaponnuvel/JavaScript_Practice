@@ -37,3 +37,69 @@ orderPromise.then((result) => {
 });
 
 
+// 🟢 Question 2 – User Login Promise
+// Create a function:
+// loginUser(username, password)
+// The function should return a Promise.
+// Rules:
+// If username is empty:
+// Username is required
+// If password is empty:
+// Password is required
+// If both are provided, resolve with:
+// Login successful
+// Use .then() and .catch() to handle the result.
+// Test:
+// loginUser("", "1234");
+// loginUser("Siva", "");
+// loginUser("Siva", "1234");
+// Expected:
+// Error: Username is required
+// Error: Password is required
+// Login successful
+// Conditions 🔥
+// Must return a Promise
+// Must use resolve()
+// Must use reject()
+// Must use .then()
+// Must use .catch()
+// No async/await
+// No loops
+
+function loginUser(username, password){
+    return new Promise((resolve, reject) => {
+        if (username === "") {
+            reject("Username is required");
+        }
+        else if(password === ""){
+            reject("Password is required");
+        }
+        else{
+            resolve("Login successful");
+        }
+    });
+}
+
+loginUser("", "1234")
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.log(`Error: ${error}`);
+    });
+
+loginUser("Siva", "")
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.log(`Error: ${error}`);
+    });
+
+loginUser("Siva", "1234")
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.log(`Error: ${error}`);
+    });
