@@ -44,3 +44,75 @@ async function displayProduct() {
 displayProduct();
 
 
+// 🟢 Question 2 – User Login with Async/Await and Try/Catch
+// Create a function:
+// loginUser(username, password)
+// It should return a Promise.
+// Rules:
+// If username is empty, reject with "Username is required".
+// If password is empty, reject with "Password is required".
+// If both are provided, resolve with "Login successful".
+// Create an async function:
+// displayLogin()
+// Inside it:
+// Use await to call loginUser("Siva", "1234").
+// Use try...catch to handle errors.
+// Print the login result.
+// Then test these three cases:
+// loginUser("", "1234");
+// loginUser("Siva", "");
+// loginUser("Siva", "1234");
+// For the three test calls, handle rejections so they don't become unhandled Promise rejections.
+// Expected messages:
+// Error: Username is required
+// Error: Password is required
+// Login successful
+// Conditions 🔥
+// Must use new Promise()
+// Must use resolve() and reject()
+// Must use async
+// Must use await
+// Must use try...catch
+// No loops
+// No .then() for the main displayLogin() flow
+
+async function loginUser(username, password) {
+    return new Promise((resolve, reject) => {
+        if(username === ""){
+            reject("Username is required");
+        }
+        else if(password === ""){
+            reject("Password is required");
+        }
+        else{
+            resolve("Login successful");
+        }
+    });
+}
+
+async function displayLogin() {
+
+    try {
+        await loginUser("", "1234");
+    } 
+    catch (error) {
+        console.log(`Error: ${error}`);
+    }
+
+    try {
+        await loginUser("Siva", "");
+    } 
+    catch (error) {
+        console.log(`Error: ${error}`);
+    }
+
+    try {
+        let result = await loginUser("Siva", "1234");
+        console.log(result);
+    } 
+    catch (error) {
+        console.log(`Error: ${error}`);
+}   
+}
+
+displayLogin();
