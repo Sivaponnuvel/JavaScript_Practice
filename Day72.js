@@ -59,3 +59,68 @@ async function placeOrder() {
 placeOrder();
 
 
+// 🟢 Question 2 – Product Fetch with Error Handling
+// Create a function:
+// fetchProduct(productId)
+// It should return a Promise.
+// Rules:
+// If productId is less than or equal to 0, reject with "Invalid product ID".
+// If productId is valid, resolve after 1 second with:
+// {
+//     id: productId,
+//     name: "Laptop",
+//     price: 55000
+// }
+// Create an async function:
+// displayProduct(productId)
+// Inside it:
+// Use try...catch.
+// Use await to call fetchProduct(productId).
+// If successful, print product name and price.
+// If rejected, print the error with the prefix "Error: ".
+// Test:
+// displayProduct(101);
+// displayProduct(-1);
+// Expected output:
+// Product: Laptop
+// Price: 55000
+// Error: Invalid product ID
+// Conditions 🔥
+// Must use new Promise()
+// Must use resolve() and reject()
+// Must use setTimeout(1000)
+// Must use async/await
+// Must use try...catch
+// No .then() for the main flow
+// No loops
+
+function fetchProduct(productId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(productId <= 0){
+                reject("Invalid product ID");
+            }
+            else{
+                resolve({
+                    id: productId,
+                    name: "Laptop",
+                    price: 55000
+                });
+            }
+        }, 1000);
+    });
+}
+
+async function displayProduct(productId) {
+    try {
+        let result = await fetchProduct(productId);
+        console.log(`Product: ${result.name}`);
+        console.log(`Price: ${result.price}`);
+
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+displayProduct(101);
+displayProduct(-1);
