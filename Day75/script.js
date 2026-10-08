@@ -17,3 +17,26 @@ document.getElementById("productPrice").textContent = "₹55000";
 document.getElementById("productStock").textContent = "In Stock";
 
 
+// 🟢 Question 2 – User Profile Form
+// Consider this HTML:
+// <input id="username" type="text">
+// <input id="email" type="email">
+// <button id="submitBtn">Submit</button>
+// <p id="result"></p>
+// Write JavaScript code to:
+// 1. Set the username input value to "Siva"
+// 2. Set the email input value to "siva@gmail.com"
+// 3. Change the button text from "Submit" to "Register"
+// 4. Display this message inside result:
+// User Siva registered successfully
+// Condition: Use DOM methods to modify the input values, button text, and paragraph content.
+
+let userName = "Siva"
+
+document.getElementById("username").value = userName;
+
+document.getElementById("email").value = "siva@gmail.com";
+
+document.getElementById("submitBtn").textContent = "Register";
+
+document.getElementById("result").textContent = `User ${userName} registered successfully`
