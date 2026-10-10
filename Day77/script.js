@@ -26,3 +26,37 @@ userName.addEventListener("input", function(){
 })
 
 
+// 🟢 Question 2 – Simple Login Form
+// Consider this HTML:
+// <input id="email" type="email" placeholder="Enter email">
+// <input id="password" type="password" placeholder="Enter password">
+// <button id="loginBtn">Login</button>
+// <p id="message"></p>
+// Write JavaScript code to:
+// 1. Select the email input.
+// 2. Select the password input.
+// 3. Select the login button.
+// 4. Select the message paragraph.
+// 5. Add a click event listener to the Login button.
+// 6. When the button is clicked:
+//    - If email is "siva@gmail.com" and password is "12345", display:
+// Login Successful
+// - Otherwise, display:
+// Invalid Email or Password
+// Condition: Use addEventListener("click", ...) and read the input values using .value.
+
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let btn = document.getElementById("loginBtn");
+let msg = document.getElementById("message");
+
+function auth() {
+    if(email.value === "siva@gmail.com" && password.value === "12345"){
+        msg.textContent = "Login Successful";
+    }
+    else{
+        msg.textContent = "Invalid Email or Password";
+    }
+}
+
+btn.addEventListener("click", auth);
