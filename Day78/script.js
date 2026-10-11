@@ -92,3 +92,117 @@ searchInput.addEventListener("input", () =>{
 });
 
 
+// 🟢 Question 2 – Shopping Cart and Total Price
+// Now imagine you're developing the shopping cart feature of the same e-commerce application.
+// Use this HTML:
+// <h2>Shopping Cart</h2>
+// <div id="cartItems"></div>
+// <h3 id="totalPrice">Total: ₹0</h3>
+// Use the following product data:
+// let cart = [
+//     { id: 1, name: "Laptop", price: 55000, quantity: 1 },
+//     { id: 2, name: "Mouse", price: 1000, quantity: 2 },
+//     { id: 3, name: "Keyboard", price: 2000, quantity: 1 }
+// ];
+// Requirements:
+// 1. Select the cartItems and totalPrice elements using DOM methods.
+// 2. Display every cart item's:
+//    - Product name
+//    - Unit price
+//    - Quantity
+//    - Subtotal (price × quantity)
+// 3. Calculate the overall cart total by adding all item subtotals.
+// 4. Display the total dynamically inside totalPrice.
+// 5. For each cart item, display an Increase Quantity button and a Decrease Quantity button.
+// 6. When the user clicks Increase Quantity, increase that product's quantity by 1.
+// 7. When the user clicks Decrease Quantity, decrease that product's quantity by 1.
+// 8. A product's quantity must never go below 1.
+// 9. After every button click, update the displayed quantities, subtotals and overall total.
+// Expected initial output:
+// Shopping Cart
+// Laptop
+// Unit Price: ₹55000
+// Quantity: 1
+// Subtotal: ₹55000
+// [Decrease Quantity] [Increase Quantity]
+// Mouse
+// Unit Price: ₹1000
+// Quantity: 2
+// Subtotal: ₹2000
+// [Decrease Quantity] [Increase Quantity]
+// Keyboard
+// Unit Price: ₹2000
+// Quantity: 1
+// Subtotal: ₹2000
+// [Decrease Quantity] [Increase Quantity]
+// Total: ₹59000
+// Example interaction:
+// If the user clicks Increase Quantity for Mouse:
+// - Mouse quantity changes from 2 to 3.
+// - Mouse subtotal changes from ₹2000 to ₹3000.
+// - Overall total changes from ₹59000 to ₹60000.
+// - Other product quantities remain unchanged.
+// Conditions:
+// - Use the provided cart array.
+// - Use DOM methods to render the cart.
+// - Use addEventListener() to handle button clicks.
+// - Use JavaScript calculations to update the total.
+// - Do not hardcode the final total.
+// - Keep all product data in the array of objects.
+
+let cart = [
+    { id: 1, name: "Laptop", price: 55000, quantity: 1 },
+    { id: 2, name: "Mouse", price: 1000, quantity: 2 },
+    { id: 3, name: "Keyboard", price: 2000, quantity: 1 }
+];
+
+let cartItems = document.getElementById("cartItems");
+let totalPrice = document.getElementById("totalPrice");
+
+function displayCart(cartArray) {
+    cartItems.innerHTML = "";
+
+    let total = 0;
+
+    if (cartArray.length === 0){
+        cartItems.innerHTML = "<p>No products found</p>";
+        totalPrice.textContent = "Total: ₹0";
+        return;
+    }
+
+    cartArray.forEach(cart => {
+        const cartDiv = document.createElement("div");
+
+        const subtotal = cart.price * cart.quantity;
+        total += subtotal
+
+        cartDiv.innerHTML = `<h3>${cart.name}</h3>
+        <p>Unit Price: ₹${cart.price}</p>
+        <p>Quantity: ${cart.quantity}</p>
+        <p>Subtotal: ₹${subtotal}</p>
+        <div>
+            <button class="decrease-btn">Decrease Quantity</button> 
+            <button class="increase-btn">Increase Quantity</button>
+        </div>`
+
+        const decreaseBtn = cartDiv.querySelector(".decrease-btn");
+        const increaseBtn = cartDiv.querySelector(".increase-btn");
+
+        increaseBtn.addEventListener("click", () => {
+            cart.quantity++;
+            displayCart(cartArray);
+        });
+
+        decreaseBtn.addEventListener("click", () => {
+            if (cart.quantity > 1) {
+                cart.quantity--;
+                displayCart(cartArray);
+            }
+        });
+
+        cartItems.appendChild(cartDiv);
+    });
+
+    totalPrice.textContent = `Total: ₹${total}`;
+}
+displayCart(cart);
