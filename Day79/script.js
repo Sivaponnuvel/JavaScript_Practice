@@ -52,3 +52,61 @@ loginBtn.addEventListener("click", function(){
 })
 
 
+// Question 2 – Product Stock Status
+// Concepts: if...else if...else, comparison operators, DOM, click events.
+// Imagine you are developing an e-commerce website. You need to display a product's stock status based on its available quantity.
+// HTML
+// <h2>Product Stock Checker</h2>
+// <p>Product: Wireless Mouse</p>
+// <label for="stockInput">Enter stock quantity:</label>
+// <input type="number" id="stockInput" placeholder="Enter quantity">
+// <button id="checkBtn">Check Stock</button>
+// <p id="stockMessage"></p>
+// Requirements
+// 1. Select the stockInput, checkBtn, and stockMessage elements using document.getElementById().
+// 2. Add a click event listener to the Check Stock button.
+// 3. Convert the input value into a number.
+// 4. If the stock quantity is less than 0, display "Invalid stock quantity".
+// 5. If the stock quantity equals 0, display "Out of stock".
+// 6. If the stock quantity is between 1 and 5, display "Low stock".
+// 7. If the stock quantity is between 6 and 20, display "Stock available".
+// 8. If the stock quantity is greater than 20, display "Stock available in large quantity".
+// 9. If the input is empty, display "Please enter stock quantity".
+// 10. Update the message correctly whenever the button is clicked.
+// Expected output
+// Input quantity	Message
+// Empty	Please enter stock quantity
+// -1	Invalid stock quantity
+// 0	Out of stock
+// 3	Low stock
+// 10	Stock available
+// 25	Stock available in large quantity
+// Condition: Use if, else if, and else. Check the empty input separately before evaluating the numeric value.
+
+let stockInput = document.getElementById("stockInput");
+let checkBtn = document.getElementById("checkBtn");
+let stockMessage = document.getElementById("stockMessage");
+
+checkBtn.addEventListener("click", function(){
+    
+    let stock = Number(stockInput.value);
+
+    if(stockInput.value === ""){
+        stockMessage.textContent = "Please enter stock quantity";
+    }
+    else if(stock < 0){
+        stockMessage.textContent = "Invalid stock quantity";
+    }
+    else if(stock === 0){
+        stockMessage.textContent = "Out of stock";
+    }
+    else if(1 <= stock && stock <= 5){
+        stockMessage.textContent = "Low stock";
+    }
+    else if(6 <= stock && stock <= 20){
+        stockMessage.textContent = "Stock available";
+    }
+    else{
+        stockMessage.textContent = "Stock available in large quantity";
+    }
+});
