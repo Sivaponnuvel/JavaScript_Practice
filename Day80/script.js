@@ -53,3 +53,66 @@ showBtn.addEventListener("click", function(){
 });
 
 
+// Question 2 – Calculate Total Marks
+// Concepts: for...of loop, arrays, conditional statements, DOM, button click events.
+// Imagine you are developing a student result page. You need to display the student's marks, calculate the total, and display a performance message.
+// HTML
+// <h2>Student Result</h2>
+// <button id="calculateBtn">Calculate Result</button>
+// <div id="marksList"></div>
+// <p id="totalMarks"></p>
+// <p id="result"></p>
+// Given data
+// let marks = [80, 65, 90, 45, 70];
+// Requirements
+// 1. Select calculateBtn, marksList, totalMarks, and result using document.getElementById().
+// 2. Add a click event listener to the Calculate Result button.
+// 3. Use a for...of loop to display each subject's marks.
+// 4. Use a loop to add all the marks and calculate the total.
+// 5. Display the total marks inside the totalMarks element.
+// 6. If the total marks are greater than or equal to 250, display "Good Performance".
+// 7. If the total marks are less than 250, display "Needs Improvement".
+// 8. Clicking the button multiple times must not duplicate the displayed marks.
+// 9. Calculate the total from the provided array. Do not hardcode the total.
+// 10. Use a for...of loop for the total calculation. Do not use reduce().
+// Expected output
+// After clicking the button:
+// Student Result
+// Subject 1: 80
+// Subject 2: 65
+// Subject 3: 90
+// Subject 4: 45
+// Subject 5: 70
+// Total Marks: 350
+// Good Performance
+
+let marks = [80, 65, 90, 45, 70];
+
+let calculateBtn = document.getElementById("calculateBtn");
+let marksList = document.getElementById("marksList");
+let totalMarks = document.getElementById("totalMarks");
+let result = document.getElementById("result");
+
+calculateBtn.addEventListener("click", function(){
+
+    marksList.innerHTML = "";
+    
+    let total = 0;
+    let subject = 1;
+
+    for(let mark of marks){
+        marksList.innerHTML += `<div>Subject ${subject}: ${mark}</div>`;
+
+        total += mark;
+        subject++;
+    }
+
+    totalMarks.textContent = `Total Marks: ${total}`;
+
+    if(total >= 250){
+        result.textContent = "Good Performance";
+    }
+    else{
+        result.textContent = "Needs Improvement"
+    }
+});
