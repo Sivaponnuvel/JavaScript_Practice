@@ -96,3 +96,68 @@ calculateBtn.addEventListener("click", function(){
 });
 
 
+// Question 2 – Registration Form Validation
+// Concepts: Functions, parameters, return values, conditional statements, string methods, DOM, click events.
+// Imagine you are developing a registration form. The website should validate the user's name and email address before displaying a registration message.
+// HTML
+// <h2>User Registration</h2>
+// <label for="nameInput">Full Name:</label>
+// <input type="text" id="nameInput" placeholder="Enter your name">
+// <br><br>
+// <label for="emailInput">Email:</label>
+// <input type="text" id="emailInput" placeholder="Enter your email">
+// <br><br>
+// <button id="registerBtn">Register</button>
+// <p id="registrationMessage"></p>
+// Requirements
+// 1. Select the name input, email input, register button, and message element using document.getElementById().
+// 2. Create a function named validateRegistration(name, email).
+// 3. The function must accept the name and email as parameters and return an appropriate validation message.
+// 4. If both fields are empty, return "Please enter your name and email".
+// 5. If only the name is empty, return "Name is required".
+// 6. If only the email is empty, return "Email is required".
+// 7. If the name contains only spaces, treat it as empty. Use .trim().
+// 8. If the email does not contain @ or does not contain a . after the @, return "Please enter a valid email".
+// 9. If all validations pass, return "Registration successful".
+// 10. Add a click event listener to the Register button. Call the validation function and display its returned message inside registrationMessage.
+// Expected output
+// Name	Email	Message
+// Empty	Empty	Please enter your name and email
+// Empty	siva@gmail.com	Name is required
+// Siva	Empty	Email is required
+// Siva	sivagmail.com	Please enter a valid email
+// Siva	siva@gmail.com	Registration successful
+// Condition: Put the validation logic inside validateRegistration(). The click event handler should call the function and display its returned message.
+
+let nameInput = document.getElementById("nameInput");
+let emailInput = document.getElementById("emailInput");
+let registerBtn = document.getElementById("registerBtn");
+let registrationMessage = document.getElementById("registrationMessage");
+
+function validateRegistration(name, email){
+    
+    name = name.trim();
+    email = email.trim();
+
+    if(name === "" && email === ""){
+        return "Please enter your name and email";
+    }
+    else if(name === "" ){
+        return "Name is required";
+    }
+    else if(email === ""){
+        return "Email is required";
+    }
+
+    let atIndex = email.indexOf("@");
+
+    if(atIndex === -1 || !email.includes(".",atIndex)){
+        return "Please enter a valid email";
+    }
+        
+    return "Registration successful";
+}
+
+registerBtn.addEventListener("click", function(){
+    registrationMessage.textContent = validateRegistration(nameInput.value, emailInput.value);
+});
