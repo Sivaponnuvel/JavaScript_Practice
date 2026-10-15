@@ -57,3 +57,75 @@ calculateBtn.addEventListener("click", function(){
 })
 
 
+// Question 2 – JSON Data Validation
+// Topic: JSON.parse() + try...catch + DOM
+// Create a feature that reads JSON data entered by the user and displays the parsed information on the webpage.
+// HTML Code
+// <h2>JSON Data Validator</h2>
+// <textarea id="jsonInput" placeholder="Enter JSON data"></textarea>
+// <button id="validateBtn">Validate JSON</button>
+// <p id="result1"></p>
+// <div id="output"></div>
+// Requirements
+// 1. Get the JSON text from the textarea when the button is clicked.
+// 2. Use JSON.parse() to convert the JSON text into a JavaScript object.
+// 3. Use try...catch to handle invalid JSON.
+// 4. If the input is empty, display Please enter JSON data.
+// 5. If the JSON is invalid, display Invalid JSON data.
+// 6. If the JSON is valid, display Valid JSON data! inside the result paragraph.
+// 7. Display the parsed object's properties and values inside the output div.
+// 8. Use addEventListener() to handle the button click.
+// Expected Output
+// Example 1 — Valid JSON:
+// Input:
+// {
+//   "name": "Siva",
+//   "role": "Python Developer",
+//   "experience": 1
+// }
+// Output:
+// Valid JSON data!
+// name: Siva
+// role: Python Developer
+// experience: 1
+// Example 2 — Invalid JSON:
+// Input:
+// {"name": "Siva", "role":}
+// Output:
+// Invalid JSON data.
+// Example 3 — Empty input:
+// Output:
+// Please enter JSON data.
+// Condition: Do not use alert(). Display the result on the webpage. Clear the previous output when the user submits invalid or empty data.
+
+let jsonInput = document.getElementById("jsonInput");
+let validateBtn = document.getElementById("validateBtn");
+let result1 =  document.getElementById("result1");
+let output = document.getElementById("output");
+
+validateBtn.addEventListener("click", function(){
+    try {
+        if(jsonInput.value.trim() === ""){
+            output.innerHTML = "";
+            throw new Error("Please enter JSON data.");
+        }
+
+        let data = JSON.parse(jsonInput.value);
+
+        result1.textContent = "Valid JSON data!";
+        output.innerHTML = "";
+
+        for(let key in data){
+            output.innerHTML += `${key} : ${data[key]}<br>`
+        }
+
+    } catch (error) {
+        if(jsonInput.value.trim() !== ""){
+            result1.textContent = "Invalid JSON data.";
+        } else {
+            result1.textContent = error.message;
+        }
+
+        output.innerHTML = "";
+    }
+})
