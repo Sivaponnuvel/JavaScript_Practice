@@ -89,6 +89,7 @@ I am consistently improving my JavaScript fundamentals, logical thinking, and pr
 * Day80 – Completed ✅
 * Day81 – Completed ✅
 * Day82 – Completed ✅
+* Day83 – Completed ✅
 
 ---
 
