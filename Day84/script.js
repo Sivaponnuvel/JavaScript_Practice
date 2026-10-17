@@ -67,3 +67,96 @@ function calculateTotal(){
 calculateBtn.addEventListener("click", calculateTotal);
 
 
+// Question 2 – Employee Search and Department Filter
+// Topics: Array of objects, filter(), includes(), toLowerCase(), functions, and DOM.
+// Create a feature that allows users to search employees by name and filter them by department.
+// HTML Code
+// <h2>Employee Directory</h2>
+// <input type="text" id="searchInput" placeholder="Search employee name">
+// <select id="departmentFilter">
+//     <option value="all">All Departments</option>
+//     <option value="IT">IT</option>
+//     <option value="HR">HR</option>
+//     <option value="Finance">Finance</option>
+// </select>
+// <button id="filterBtn">Search Employees</button>
+// <div id="employeeList"></div>
+// Requirements
+// 1. Create an array containing at least five employee objects with name, department, and salary properties.
+// Example:
+// let employees = [
+//     { name: "Arun", department: "IT", salary: 30000 },
+//     { name: "Priya", department: "HR", salary: 25000 },
+//     { name: "Kumar", department: "Finance", salary: 35000 },
+//     { name: "Divya", department: "IT", salary: 40000 },
+//     { name: "Ravi", department: "HR", salary: 28000 }
+// ];
+// 2. Create a function named filterEmployees().
+// 3. When the Search Employees button is clicked, get the search text and selected department.
+// 4. Use filter() to return employees who match both conditions:
+//    - Their name contains the search text, ignoring uppercase and lowercase differences.
+//    - Their department matches the selected department, unless all is selected.
+// 5. Display each matching employee's name, department, and salary.
+// 6. If no employees match, display No employees found.
+// 7. If the search input is empty and the department is all, display all employees.
+// Expected Output
+// If the user enters a and selects IT:
+// Arun - IT - ₹30000
+// Divya - IT - ₹40000
+// If the user enters Priya and selects HR:
+// Priya - HR - ₹25000
+// If the user enters Siva and selects Finance:
+// No employees found.
+// Condition: Use addEventListener() and display all results on the webpage. Do not use alert().
+
+let employees = [
+    { name: "Arun", department: "IT", salary: 30000 },
+    { name: "Priya", department: "HR", salary: 25000 },
+    { name: "Kumar", department: "Finance", salary: 35000 },
+    { name: "Divya", department: "IT", salary: 40000 },
+    { name: "Ravi", department: "HR", salary: 28000 }
+];
+
+let searchInput = document.getElementById("searchInput");
+let departmentFilter = document.getElementById("departmentFilter");
+let filterBtn = document.getElementById("filterBtn");
+let employeeList = document.getElementById("employeeList");
+
+function filterEmployees() {
+
+    let searchText = searchInput.value.toLowerCase().trim();
+    let selectedDepartment = departmentFilter.value;
+
+    let filteredEmployees = employees.filter(employee => {
+
+        let nameMatch = employee.name
+            .toLowerCase()
+            .includes(searchText);
+
+        let departmentMatch =
+            selectedDepartment === "all" ||
+            employee.department === selectedDepartment;
+
+        return nameMatch && departmentMatch;
+    });
+
+    employeeList.innerHTML = "";
+
+    if (filteredEmployees.length === 0) {
+        employeeList.innerHTML = "<p>No employees found.</p>";
+        return;
+    }
+
+    filteredEmployees.forEach(employee => {
+        let p = document.createElement("p");
+
+        p.textContent =
+            `${employee.name} - ${employee.department} - ₹${employee.salary}`;
+
+        employeeList.appendChild(p);
+    });
+}
+
+filterBtn.addEventListener("click", filterEmployees);
+
+filterEmployees();
