@@ -91,3 +91,108 @@ function filterProducts() {
 filterBtn.addEventListener("click", filterProducts);
 
 
+// Question 2 – Employee Salary Calculator
+// Topics: Arrays, objects, for...of, functions, conditional statements, and DOM manipulation.
+// Create a feature that calculates employee salaries after adding a bonus based on their department.
+// HTML Code
+// <h2>Employee Salary Calculator</h2>
+// <input type="text" id="employeeName" placeholder="Enter employee name">
+// <input type="number" id="salary" placeholder="Enter basic salary">
+// <select id="department">
+//     <option value="">Select Department</option>
+//     <option value="IT">IT</option>
+//     <option value="HR">HR</option>
+//     <option value="Finance">Finance</option>
+// </select>
+// <button id="calculateBtn">Calculate Salary</button>
+// <div id="result"></div>
+// Requirements
+// 1. Get the employee name, basic salary, and department when the button is clicked.
+// 2. If any field is empty, display Please fill in all fields.
+// 3. If the basic salary is zero or negative, display Salary must be greater than zero.
+// 4. Store the employee details in an object with name, basicSalary, and department properties.
+// 5. Create a function named calculateSalary().
+// 6. Calculate the bonus percentage according to the department:
+//    - IT: 20% bonus
+//    - HR: 10% bonus
+//    - Finance: 15% bonus
+// 7. Store the basic salary and bonus in an array, then use a for...of loop to calculate the final salary.
+// 8. Display the employee name, department, basic salary, bonus amount, and final salary.
+// Expected Output
+// Example input:
+// Employee Name: Siva
+// Basic Salary: 30000
+// Department: IT
+// Expected output:
+// Employee Name: Siva
+// Department: IT
+// Basic Salary: ₹30000.00
+// Bonus: ₹6000.00
+// Final Salary: ₹36000.00
+// Condition: Use addEventListener() and a reusable function. Display results on the webpage without using alert().
+
+let employeeName = document.getElementById("employeeName");
+let salary = document.getElementById("salary");
+let department = document.getElementById("department");
+let calculateBtn = document.getElementById("calculateBtn");
+let result = document.getElementById("result");
+
+function calculateSalary(employee) {
+    let bonusPercentage = 0;
+
+    if (employee.department === "IT") {
+        bonusPercentage = 20;
+    } else if (employee.department === "HR") {
+        bonusPercentage = 10;
+    } else if (employee.department === "Finance") {
+        bonusPercentage = 15;
+    }
+
+    let bonusAmount = employee.basicSalary * (bonusPercentage / 100);
+
+    let salaryArray = [employee.basicSalary, bonusAmount];
+
+    let finalSalary = 0;
+
+    for (let amount of salaryArray) {
+        finalSalary += amount;
+    }
+
+    return {
+        bonusAmount,
+        finalSalary
+    };
+}
+
+calculateBtn.addEventListener("click", function () {
+
+    let name = employeeName.value.trim();
+    let basicSalary = Number(salary.value);
+    let dept = department.value;
+
+    if (name === "" || salary.value === "" || dept === "") {
+        result.innerHTML = "Please fill in all fields";
+        return;
+    }
+
+    if (basicSalary <= 0) {
+        result.innerHTML = "Salary must be greater than zero";
+        return;
+    }
+
+    let employee = {
+        name: name,
+        basicSalary: basicSalary,
+        department: dept
+    };
+
+    let salaryDetails = calculateSalary(employee);
+
+    result.innerHTML = `
+        <p><strong>Employee Name:</strong> ${employee.name}</p>
+        <p><strong>Department:</strong> ${employee.department}</p>
+        <p><strong>Basic Salary:</strong> ₹${employee.basicSalary.toFixed(2)}</p>
+        <p><strong>Bonus:</strong> ₹${salaryDetails.bonusAmount.toFixed(2)}</p>
+        <p><strong>Final Salary:</strong> ₹${salaryDetails.finalSalary.toFixed(2)}</p>
+    `;
+});
