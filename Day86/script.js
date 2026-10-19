@@ -45,3 +45,51 @@ function checkNumber() {
 checkNumberBtn.addEventListener("click", checkNumber);
 
 
+// Question 2 – Simple Electricity Bill Calculator
+// Topics: Variables, functions, conditional statements, DOM manipulation, event listeners.
+// HTML Code
+// <h2>Electricity Bill Calculator</h2>
+// <input type="number" id="units" placeholder="Enter electricity units">
+// <button id="calculateBtn">Calculate Bill</button>
+// <div id="billResult"></div>
+// Requirements
+// 1. Get the input, button, and result elements using getElementById().
+// 2. Create a function named calculateBill().
+// 3. When the button is clicked, get the electricity units entered by the user.
+// 4. If the input is empty or the units are negative, display Please enter valid units.
+// 5. Calculate the electricity bill using these conditions:
+//    - Units up to 100: ₹2 per unit.
+//    - Units from 101 to 200: ₹3 per unit.
+//    - Units above 200: ₹5 per unit.
+// 6. For this question, apply the rate to all units based on the matching range. For example, 150 units = 150 × ₹3 = ₹450.
+// 7. Display the entered units and the total bill amount.
+// Expected Output
+// - Input: 80 → Total Bill: ₹160
+// - Input: 150 → Total Bill: ₹450
+// - Input: 250 → Total Bill: ₹1250
+// - Empty input → Please enter valid units.
+// Condition: Use addEventListener() and a reusable function. Display results on the webpage without using alert().
+
+let units = document.getElementById("units");
+let calculateBtn = document.getElementById("calculateBtn");
+let billResult = document.getElementById("billResult");
+
+function calculateBill() {
+    
+    let unitsText = Number(units.value);
+
+    if(units.value === "" || unitsText < 0){
+        billResult.innerHTML = "<p>Please enter valid units.</p>";
+    }
+    else if(unitsText <= 100){
+        billResult.innerHTML = `<p>Units: ${unitsText}</p><p>Total Bill: ₹${unitsText * 2}</p>`   
+    }
+    else if(unitsText <= 200){
+        billResult.innerHTML = `<p>Units: ${unitsText}</p><p>Total Bill: ₹${unitsText * 3}</p>`   
+    }
+    else{
+        billResult.innerHTML = `<p>Units: ${unitsText}</p><p>Total Bill: ₹${unitsText * 5}</p>`   
+    }
+}
+
+calculateBtn.addEventListener("click", calculateBill);
