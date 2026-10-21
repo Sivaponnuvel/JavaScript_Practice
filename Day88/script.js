@@ -79,3 +79,70 @@ searchBtn.addEventListener("click", function () {
 });
 
 
+// 🟢 Question 2 – Shopping Cart Total Calculator
+// Topics: DOM, Event Listeners, Arrays, Objects, reduce(), Conditional Statements
+// Consider this HTML:
+// <h2>Shopping Cart</h2>
+// <div id="cartItems"></div>
+// <button id="calculateBtn">Calculate Total</button>
+// <p id="totalAmount"></p>
+// <p id="cartMessage"></p>
+// You have the following cart data:
+// let cart = [
+//     { name: "Laptop", price: 55000, quantity: 1 },
+//     { name: "Mouse", price: 1000, quantity: 2 },
+//     { name: "Keyboard", price: 2000, quantity: 1 }
+// ];
+// Write JavaScript code to:
+// 1. Select all the required HTML elements.
+// 2. Display each cart item's name, price, and quantity inside cartItems.
+// 3. Add a click event listener to the Calculate Total button.
+// 4. When the button is clicked, calculate the total cost of all cart items, including their quantities.
+// 5. Display the final amount inside totalAmount in this format:
+// Total Amount: ₹59000
+// 6. If the cart is empty, display Your cart is empty inside cartMessage.
+// 7. If the cart contains items, clear cartMessage.
+// Conditions:
+// - Use addEventListener("click", ...).
+// - Use reduce() to calculate the total.
+// - The total must account for price × quantity.
+// - The total should be calculated when the button is clicked.
+
+let cart = [
+    { name: "Laptop", price: 55000, quantity: 1 },
+    { name: "Mouse", price: 1000, quantity: 2 },
+    { name: "Keyboard", price: 2000, quantity: 1 }
+];
+
+let cartItems = document.getElementById("cartItems");
+let calculateBtn = document.getElementById("calculateBtn");
+let totalAmount = document.getElementById("totalAmount");
+let cartMessage = document.getElementById("cartMessage");
+
+cart.forEach(function(item) {
+    cartItems.innerHTML += `
+        <div>
+            <h3>${item.name}</h3>
+            <p>Price: ₹${item.price}</p>
+            <p>Quantity: ${item.quantity}</p>
+            <hr>
+        </div>
+    `;
+});
+
+calculateBtn.addEventListener("click", function() {
+
+    if (cart.length === 0) {
+        cartMessage.textContent = "Your cart is empty";
+        totalAmount.textContent = "";
+    } else {
+
+        cartMessage.textContent = "";
+
+        let total = cart.reduce(function(sum, item) {
+            return sum + (item.price * item.quantity);
+        }, 0);
+
+        totalAmount.textContent = `Total Amount: ₹${total}`;
+    }
+});
