@@ -40,3 +40,40 @@ discountBtn.addEventListener("click", function(){
 })
 
 
+// 🟢 Question 2 – Student Pass or Fail Checker
+// Topics: DOM, .value, Number(), if...else, Event Listeners
+// Consider this HTML:
+// <input id="marks" type="number" placeholder="Enter student marks">
+// <button id="checkBtn">Check Result</button>
+// <p id="result1"></p>
+// Write JavaScript code to:
+// 1. Select the marks input, button, and result paragraph.
+// 2. Add a click event listener to the button.
+// 3. Read the student's marks entered by the user.
+// 4. If the marks are 35 or more, display Student Passed.
+// 5. Otherwise, display Student Failed.
+// Expected output:
+// If the user enters 75:
+// Student Passed
+// If the user enters 25:
+// Student Failed
+// Conditions:
+// - Use addEventListener("click", ...).
+// - Read the marks using .value and convert them with Number().
+// - Use if...else.
+// - Display the result using textContent.
+
+let marks = document.getElementById("marks");
+let checkBtn = document.getElementById("checkBtn");
+let result1 = document.getElementById("result1");
+
+checkBtn.addEventListener("click", function(){
+    let marksText = Number(marks.value);
+
+    if(marksText >= 35){
+        result1.textContent = "Student Passed";
+    }
+    else{
+        result1.textContent = "Student Failed";
+    }
+})
