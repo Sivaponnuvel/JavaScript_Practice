@@ -48,3 +48,61 @@ validateBtn.addEventListener("click", function(){
 })
 
 
+// 🟢 Question 2 – Simple Product Search
+// Topics: DOM, Arrays, .value, .toLowerCase(), .includes(), Event Listeners
+// Consider this HTML:
+// <h2>Product Search</h2>
+// <input type="text" id="searchInput" placeholder="Search product">
+// <button id="searchBtn">Search</button>
+// <p id="result"></p>
+// Use this product array:
+// let products = ["Laptop", "Mobile", "Keyboard", "Mouse", "Monitor"];
+// Write JavaScript code to:
+// 1. Select the search input, button, and result paragraph.
+// 2. Add a click event listener to the button.
+// 3. Read the product name entered by the user.
+// 4. Convert the entered product name to lowercase using .toLowerCase().
+// 5. Convert the product names to lowercase when checking for a match.
+// 6. Check whether the entered product name exists in the array.
+// 7. If the product exists, display Product Available.
+// 8. Otherwise, display Product Not Available.
+// Expected Output:
+// Example 1:
+// Input: "laptop"
+// Output: Product Available
+// Example 2:
+// Input: "MOBILE"
+// Output: Product Available
+// Example 3:
+// Input: "Tablet"
+// Output: Product Not Available
+// Conditions:
+// - Use addEventListener("click", ...).
+// - Use .value and .toLowerCase().
+// - Use an array and the .includes() method.
+// - Use if...else.
+// - Match complete product names, not partial names.
+// - Display the result using textContent.
+// - Do not use .filter() or .find() for this question.
+
+let products = ["Laptop", "Mobile", "Keyboard", "Mouse", "Monitor"];
+
+let searchInput = document.getElementById("searchInput");
+let searchBtn = document.getElementById("searchBtn");
+let result = document.getElementById("result");
+
+searchBtn.addEventListener("click", function(){
+
+    let searchInputText = searchInput.value.toLowerCase();
+
+    let lowerProducts = products.map(product => 
+        product.toLowerCase()
+    )
+
+    if(lowerProducts.includes(searchInputText)){
+        result.textContent = "Product Available";
+    }
+    else{
+        result.textContent = "Product Not Available";
+    }
+})
