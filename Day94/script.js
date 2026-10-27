@@ -70,3 +70,62 @@ gradeBtn.addEventListener("click", function(){
 })
 
 
+// 🟢 Question 2 – Simple Shopping Cart Item Checker
+// Topics: DOM, Arrays, .value, .trim(), .toLowerCase(), .includes(), Event Listeners
+// Consider this HTML:
+// <h2>Shopping Cart Item Checker</h2>
+// <input type="text" id="itemInput" placeholder="Enter item name">
+// <button id="checkBtn">Check Item</button>
+// <p id="message"></p>
+// Use this shopping cart array:
+// let cart = ["Laptop", "Mouse", "Keyboard", "Monitor"];
+// Write JavaScript code to:
+// 1. Select the item input, button, and message paragraph.
+// 2. Add a click event listener to the button.
+// 3. Read the item entered by the user.
+// 4. Remove unwanted spaces using .trim().
+// 5. Convert the entered item name to lowercase using .toLowerCase().
+// 6. Convert the cart item names to lowercase when checking for a match.
+// 7. If the item already exists in the cart, display Item Already in Cart.
+// 8. Otherwise, display Item Not in Cart.
+// Expected Output:
+// Example 1:
+// Input: "laptop"
+// Output: Item Already in Cart
+// Example 2:
+// Input: "  MOUSE  "
+// Output: Item Already in Cart
+// Example 3:
+// Input: "Mobile"
+// Output: Item Not in Cart
+// Example 4:
+// Input: "Keyboard"
+// Output: Item Already in Cart
+// Conditions:
+// - Use addEventListener("click", ...).
+// - Use .value, .trim(), and .toLowerCase().
+// - Use an array and .includes().
+// - Use if...else.
+// - Display the result using textContent.
+// - Match complete item names, not partial names.
+// - Do not use .filter() or .find().
+
+let cart = ["Laptop", "Mouse", "Keyboard", "Monitor"];
+
+let itemInput = document.getElementById("itemInput");
+let checkBtn = document.getElementById("checkBtn");
+let message = document.getElementById("message");
+
+let carts = cart.map(item => item.toLowerCase());
+
+checkBtn.addEventListener("click", function(){
+
+    let itemInputText = itemInput.value.trim().toLowerCase();
+
+    if(carts.includes(itemInputText)){
+        message.textContent = "Item Already in Cart";
+    }
+    else{
+        message.textContent = "Item Not in Cart"
+    }
+})
