@@ -69,3 +69,104 @@ addBtn.addEventListener("click", function(){
 })
 
 
+// 🟢 Question 2 – Simple Product Inventory Stock Updater
+// Topics: DOM, Arrays, Objects, Loops, Number(), Number.isInteger(), Conditional Statements
+// Consider this HTML:
+// <h2>Product Inventory Manager</h2>
+// <input type="text" id="productInput" placeholder="Enter product name">
+// <input type="number" id="stockInput" placeholder="Enter stock to add">
+// <button id="updateBtn">Add Stock</button>
+// <p id="result"></p>
+// Use this product inventory array:
+// let inventory = [
+//     { name: "Laptop", stock: 5 },
+//     { name: "Mouse", stock: 10 },
+//     { name: "Keyboard", stock: 3 },
+//     { name: "Monitor", stock: 0 }
+// ];
+// Write JavaScript code to:
+// 1. Select both inputs, button, and result paragraph.
+// 2. Add a click event listener to the button.
+// 3. Read the product name and stock quantity.
+// 4. Remove unwanted spaces and convert the product name to lowercase.
+// 5. If the product name is empty, display Please enter a product name.
+// 6. If the stock quantity is 0, negative, or not a whole number, display Invalid Stock Quantity.
+// 7. Search for the product in the inventory using a for or for...of loop.
+// 8. If the product exists, add the entered stock quantity to its existing stock.
+// 9. Display Stock Updated - Product: X, Total Stock: Y.
+// 10. If the product does not exist, display Product Not Found.
+// 11. Updated stock values must remain changed for future button clicks.
+// Expected Output:
+// Example 1:
+// Input Product: laptop
+// Stock to Add: 5
+// Stock Updated - Product: Laptop, Total Stock: 10
+// Example 2 (another update):
+// Input Product: LAPTOP
+// Stock to Add: 3
+// Stock Updated - Product: Laptop, Total Stock: 13
+// Example 3:
+// Input Product: Monitor
+// Stock to Add: 4
+// Stock Updated - Product: Monitor, Total Stock: 4
+// Example 4:
+// Input Product: Mouse
+// Stock to Add: -2
+// Invalid Stock Quantity
+// Example 5:
+// Input Product: Mobile
+// Stock to Add: 5
+// Product Not Found
+// Conditions:
+// - Use addEventListener("click", ...).
+// - Use .value, .trim(), .toLowerCase(), and Number().
+// - Use Number.isInteger() for whole-number validation.
+// - Use a for or for...of loop.
+// - Use if...else if...else.
+// - Display results using textContent.
+// - Do not use .find() or .filter().
+// - Do not reset the inventory after every click.
+
+let inventory = [
+    { name: "Laptop", stock: 5 },
+    { name: "Mouse", stock: 10 },
+    { name: "Keyboard", stock: 3 },
+    { name: "Monitor", stock: 0 }
+];
+
+let productInput = document.getElementById("productInput");
+let stockInput = document.getElementById("stockInput");
+let updateBtn = document.getElementById("updateBtn");
+let result = document.getElementById("result");
+
+updateBtn.addEventListener("click", function(){
+
+    let productInputText = productInput.value.trim().toLowerCase();
+    let stockInputText = Number(stockInput.value);
+
+    if(productInputText === ""){
+        result.textContent = "Please enter a product name";
+    }
+    
+    else if(stockInputText <= 0 || isNaN(stockInputText) || !Number.isInteger(stockInputText)){
+        result.textContent = "Invalid Stock Quantity";
+    }
+
+    else{
+        let found = false;
+
+        for(let product of inventory){
+            if(product.name.toLowerCase() === productInputText){
+                found = true;
+
+                product.stock += stockInputText;
+
+                result.textContent = `Stock Updated - Product: ${product.name}, Total Stock: ${product.stock}`
+            }
+        }
+
+        if(!found){
+            result.textContent = "Product Not Found";
+        }
+    }
+})
