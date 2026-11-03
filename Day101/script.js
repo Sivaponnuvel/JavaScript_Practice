@@ -167,3 +167,143 @@ searchInput.addEventListener("input", function(){
 });
 
 
+// 🟢 Question 2 – Student Marks Manager
+// Topics: DOM, Arrays, Objects, createElement(), appendChild(), remove(), Event Listeners, Input Validation, Conditional Statements, forEach().
+// HTML
+// <h2>Student Marks Manager</h2>
+// <input type="text" id="studentNameInput" placeholder="Enter student name">
+// <input type="number" id="marksInput" placeholder="Enter marks">
+// <button id="addStudentBtn">Add Student</button>
+// <p id="studentMessage"></p>
+// <ul id="studentMarksList"></ul>
+// Initial Array
+// let students = [];
+// Requirements
+// Write JavaScript code to implement the following functionality:
+// 1. Select the student name input, marks input, Add Student button, message paragraph, and student list.
+// 2. Add a click event listener to the Add Student button.
+// 3. Get the student name using .value and .trim().
+// 4. Get the marks using Number().
+// 5. If the student name is empty, display Please enter a student name.
+// 6. If the marks input is empty, display Please enter student marks.
+// 7. If the marks are less than 0 or greater than 100, display Marks must be between 0 and 100.
+// 8. If the inputs are valid, create a student object containing the student's name and marks.
+// 9. Add the student object to the students array using .push().
+// 10. Create a new <li> element and display the student's name, marks, and result.
+// 11. If the marks are 35 or above, display Pass. Otherwise, display Fail.
+// 12. Create a Delete button for every student.
+// 13. When the Delete button is clicked, remove only that student's entry from the displayed list.
+// 14. Also remove the corresponding student object from the students array.
+// 15. Display Student Added Successfully after adding a student.
+// 16. Clear both input fields after successfully adding a student.
+// Expected Behaviour
+// Example 1 — Add a student
+// Input:
+// Student Name: Arun
+// Marks: 85
+// Output:
+// Arun - Marks: 85 - Pass [Delete]
+// Message:
+// Student Added Successfully
+// Example 2 — Add another student
+// Input:
+// Student Name: Priya
+// Marks: 25
+// Output:
+// Arun - Marks: 85 - Pass [Delete]
+// Priya - Marks: 25 - Fail [Delete]
+// Example 3 — Invalid marks
+// Input:
+// Student Name: Karthik
+// Marks: 120
+// Output:
+// Marks must be between 0 and 100
+// Karthik should not be added to the list or array.
+// Example 4 — Empty student name
+// Input:
+// Student Name: (empty)
+// Marks: 70
+// Output:
+// Please enter a student name
+// Example 5 — Delete a student
+// Click Delete beside Arun.
+// Output:
+// Priya - Marks: 25 - Fail [Delete]
+// Only Arun should be removed from the displayed list and the array.
+// Conditions
+// - Use addEventListener("click", ...).
+// - Use .value and .trim().
+// - Use Number() to convert marks into a number.
+// - Use an array of student objects.
+// - Use .push() to add student objects.
+// - Use document.createElement() and appendChild().
+// - Use .remove() to remove the selected student from the displayed list.
+// - Use .splice() to remove the corresponding student from the array.
+// - Use conditional statements to determine Pass or Fail.
+// - Use textContent to display student information and messages.
+// - Validate all inputs before adding a student.
+// - Deleting one student must not delete other students.
+
+let students = [];
+
+let studentNameInput = document.getElementById("studentNameInput");
+let marksInput = document.getElementById("marksInput");
+let addStudentBtn = document.getElementById("addStudentBtn");
+let studentMessage = document.getElementById("studentMessage");
+let studentMarksList = document.getElementById("studentMarksList");
+
+addStudentBtn.addEventListener("click", function(){
+
+    let studentNameInputText = studentNameInput.value.trim();
+    let marksInputText = Number(marksInput.value);
+
+    if(studentNameInputText === ""){
+        studentMessage.textContent = "Please enter a student name";
+    }
+    else if(marksInput.value === ""){
+        studentMessage.textContent = "Please enter student marks";
+    }
+    else if(marksInputText < 0 || marksInputText > 100){
+        studentMessage.textContent = "Marks must be between 0 and 100";
+    }
+    else{
+        
+        let student = {
+            name: studentNameInputText,
+            marks: marksInputText
+        }
+
+        students.push(student);
+
+        let result;
+
+        if(marksInputText >= 35){
+            result = "Pass";
+        }else{
+            result = "Fail";
+        }
+
+        let li = document.createElement("li");
+        li.textContent = `${studentNameInputText} - Marks: ${marksInputText} - ${result}`;
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+
+        deleteBtn.addEventListener("click", function(){
+            li.remove();
+            let studentIndex = students.indexOf(student);
+
+            if(studentIndex !== -1){
+                students.splice(studentIndex, 1);
+            }
+        })
+
+        li.appendChild(deleteBtn);
+        studentMarksList.appendChild(li);
+
+        studentMessage.textContent = "Student Added Successfully";
+
+        studentNameInput.value = "";
+        marksInput.value = "";
+    }
+})
