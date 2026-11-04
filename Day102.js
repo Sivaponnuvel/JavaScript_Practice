@@ -37,3 +37,42 @@ console.log(typeof isDeveloper);
 console.log(typeof salary);
 
 
+// 🟢 Question 2 – Operators and Output Prediction
+// Topics: Arithmetic operators, assignment operators, increment operators, console.log().
+// Predict the output of the following JavaScript code. Write the output in the correct order and explain briefly how you got each answer.
+// let a = 10;
+// let b = 3;
+// console.log(a + b);
+// console.log(a - b);
+// console.log(a * b);
+// console.log(a % b);
+// a += 5;
+// console.log(a);
+// b++;
+// console.log(b);
+// console.log(a + b);
+// console.log(a > b);
+// Requirements:
+// 1. Write the output of all eight console.log() statements.
+// 2. Maintain the correct output order.
+// 3. Explain the result of each statement briefly.
+// Conditions:
+// - Do not execute the code to find the answer.
+// - Predict the output using your JavaScript knowledge.
+
+let a = 10;
+let b = 3;
+
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a % b);
+
+a += 5;
+console.log(a);
+
+b++;
+console.log(b);
+
+console.log(a + b);
+console.log(a > b);
