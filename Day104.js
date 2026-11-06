@@ -22,3 +22,29 @@ if (str === rev) {
 }
 
 
+// Question 2 – Find the Second Largest Number in an Array
+// Write a JavaScript program to find the second-largest distinct number in an array.
+// Input:
+// let numbers = [10, 5, 20, 8, 15, 20];
+// Expected Output:
+// 15
+// Conditions:
+// - Do not use sort().
+// - Do not use Math.max().
+// - The second-largest number must be distinct from the largest.
+
+let numbers = [10, 5, 20, 8, 15, 20];
+let largest = -Infinity;
+let seocndLargest = -Infinity;
+
+for(let number of numbers){
+    if(number > largest){
+        seocndLargest = largest;
+        largest = number;
+    }
+    else if(number > seocndLargest && number !== largest){
+        seocndLargest = number;
+    }
+}
+
+console.log(seocndLargest);
