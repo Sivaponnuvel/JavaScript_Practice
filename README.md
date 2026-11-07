@@ -111,6 +111,7 @@ I am consistently improving my JavaScript fundamentals, logical thinking, and pr
 * Day102 – Completed ✅
 * Day103 – Completed ✅
 * Day104 – Completed ✅
+* Day105 – Completed ✅
 
 ---
 
