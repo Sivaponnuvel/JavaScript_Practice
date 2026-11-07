@@ -32,3 +32,31 @@ for(let i = 0; i <= (str.length - 1); i++){
 console.log(freq);
 
 
+// Question 2 – Find Missing Number in an Array
+// An array contains numbers from 1 to N, but one number is missing.
+// Write a JavaScript program to find the missing number.
+// Input:
+// let numbers = [1, 2, 3, 5, 6];
+// Expected Output:
+// 4
+// Conditions:
+// - Numbers are in the range 1 to N.
+// - Only one number is missing.
+// - Do not use sort().
+// - Try solving using a loop and mathematical logic.
+
+let numbers = [1, 2, 3, 5, 6];
+
+let n = numbers.length + 1;
+
+let expectedSum = n * (n + 1) / 2
+
+let actualSum = 0
+
+for(let number of numbers){
+    actualSum += number;
+}
+
+let missingNumber = expectedSum - actualSum;
+
+console.log(missingNumber);
