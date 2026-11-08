@@ -31,3 +31,30 @@ for(let number of numbers){
 console.log(freq);
 
 
+// Question 2 – Find the First Non-Repeating Character in a String
+// Write a JavaScript program to find the first character that appears only once in a given string.
+// Input:
+// let str = "aabbcdeff";
+// Expected Output:
+// c
+// Conditions:
+// - Use loops.
+// - Do not use Map or Set.
+// - Do not use built-in methods that directly solve the problem.
+
+let str = "aabbcdeff";
+
+for(let i = 0; i < str.length; i++){
+    let count = 0
+    
+    for(let j = 0; j < str.length; j++){
+        if(str[i] === str[j]){
+            count++;
+        }
+    }
+
+    if(count === 1){
+        console.log(str[i]);
+        break;
+    }
+}
