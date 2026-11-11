@@ -29,3 +29,27 @@ for(let number of numbers){
 console.log(secondLargest);
 
 
+// Question 2 – Count the Number of Words in a String
+// Write a JavaScript program to count the total number of words in a given string.
+// Input:
+// let str = "JavaScript is a powerful programming language";
+// Expected Output:
+// 6
+// Conditions:
+// 1. Use loops.
+// 2. Do not use split().
+// 3. Do not use regular expressions.
+// 4. Handle multiple spaces between words.
+// 5. Do not count leading or trailing spaces as words.
+
+let str = "JavaScript is a powerful programming language";
+
+let count = 0
+
+for(let i = 0; i < str.length; i++){
+    if(str[i] !== " " && (i === 0 || str[i - 1] === " ")){
+        count++;
+    }
+}
+
+console.log(count)
