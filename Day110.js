@@ -37,3 +37,34 @@ if(maxDifference > 0){
 }
 
 
+// Question 2 – Check Whether a String Is a Palindrome
+// Write a JavaScript program to check whether a given string is a palindrome.
+// A palindrome reads the same forward and backward.
+// Input 1:
+// let str = "madam";
+// Expected Output:
+// Palindrome
+// Input 2:
+// let str = "hello";
+// Expected Output:
+// Not Palindrome
+// Conditions:
+// 1. Use loops.
+// 2. Do not use reverse().
+// 3. Do not use any external libraries.
+// 4. Compare characters from both ends of the string.
+
+let str = "madam";
+
+let rev = "";
+
+for(let i = 0; i < str.length; i++){
+    rev = str[i] + rev
+}
+
+if (rev === str){
+    console.log("Palindrome");
+}
+else{
+    console.log("Not Palindrome");
+}
