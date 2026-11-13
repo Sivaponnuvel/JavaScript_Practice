@@ -40,3 +40,39 @@ for(let i = 0; i < arr1.length; i++){
 console.log(common)
 
 
+// Question 2 – Find the Longest Word in a String
+// Write a JavaScript program to find the longest word in a given string.
+// Input:
+// let str = "Python JavaScript React Development";
+// Expected Output:
+// JavaScript
+// Conditions:
+// 1. Use loops.
+// 2. Do not use split().
+// 3. Do not use regular expressions.
+// 4. Handle multiple spaces between words.
+// 5. If multiple words have the same maximum length, return the first one.
+
+let str = "Python JavaScript React Development";
+
+let currentWord = "";
+let longestWord = "";
+
+for(let i = 0; i < str.length; i++){
+
+    if(str[i] !== " "){
+        currentWord += str[i];
+    }
+    else{
+        if(currentWord.length > longestWord.length){
+            longestWord = currentWord;
+        }
+        currentWord = "";
+    }
+}
+
+if(currentWord.length > longestWord.length){
+    longestWord = currentWord;
+}
+
+console.log(longestWord);
