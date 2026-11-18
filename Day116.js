@@ -33,3 +33,38 @@ const divideNumbers = (a, b) => {
 
 console.log(divideNumbers(a, b))
 
+
+// Question 2 – Validate User Age Using Try-Catch-Finally
+// Write a JavaScript program using an arrow function named checkAge that accepts a user's age and validates it.
+// Input:
+// let age = 15;
+// Expected Output:
+// Error: Age must be 18 or above
+// Validation completed
+// Conditions:
+// 1. Use an arrow function named checkAge.
+// 2. Accept one parameter (age).
+// 3. Use try, catch, and finally blocks.
+// 4. If age is below 18, throw an error using throw new Error().
+// 5. If age is 18 or above, return "Eligible to vote".
+// 6. Catch the error and print its message using console.log(error.message).
+// 7. Inside finally, print "Validation completed".
+
+let age = 15;
+
+const checkAge = (age) => {
+    try {
+        if(age < 18){
+            throw new Error("Age must be 18 or above");
+        }
+        return "Eligible to vote"
+    } 
+    catch (error) {
+        console.log(`Error: ${error.message}`);
+    }
+    finally{
+        console.log("Validation completed");
+    }
+}
+
+checkAge(age);
