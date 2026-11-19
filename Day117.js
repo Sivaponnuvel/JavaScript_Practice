@@ -1,0 +1,23 @@
+// Question 1 – Square Each Number Using Map()
+// Write an arrow function named squareNumbers that accepts an array of numbers and returns a new array containing the square of each number.
+// Input:
+// let numbers = [2, 3, 4, 5, 6];
+// Expected Output:
+// [4, 9, 16, 25, 36]
+// Conditions:
+// 1. Use an arrow function named squareNumbers.
+// 2. The function must accept one parameter (array).
+// 3. Use the map() array method.
+// 4. Calculate the square of each number using ** 2.
+// 5. Return the new array.
+// 6. Print the result using console.log().
+
+let numbers = [2, 3, 4, 5, 6];
+
+const squareNumbers = (numbers) => {
+    return numbers.map(number => number ** 2)
+}
+
+console.log(squareNumbers(numbers));
+
+
