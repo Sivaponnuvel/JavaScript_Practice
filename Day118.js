@@ -21,3 +21,40 @@ const filterNumbers = (numbers) => {
 console.log(filterNumbers(numbers));
 
 
+// Question 2 – Filter Students Based on Age
+// Write an arrow function named filterStudents that accepts an array of student objects and returns only students whose age is greater than or equal to 21.
+// Input:
+// let students = [
+//     { id: 1, name: "Arun", age: 20 },
+//     { id: 2, name: "Kumar", age: 22 },
+//     { id: 3, name: "Ravi", age: 19 },
+//     { id: 4, name: "Priya", age: 23 },
+//     { id: 5, name: "Vijay", age: 21 }
+// ];
+// Expected Output:
+// [
+//     { id: 2, name: "Kumar", age: 22 },
+//     { id: 4, name: "Priya", age: 23 },
+//     { id: 5, name: "Vijay", age: 21 }
+// ]
+// Conditions:
+// 1. Use an arrow function named filterStudents.
+// 2. The function must accept one parameter (array).
+// 3. Use the filter() array method.
+// 4. Check student age using student.age >= 21.
+// 5. Return the filtered array of student objects.
+// 6. Print the result using console.log().
+
+let students = [
+    { id: 1, name: "Arun", age: 20 },
+    { id: 2, name: "Kumar", age: 22 },
+    { id: 3, name: "Ravi", age: 19 },
+    { id: 4, name: "Priya", age: 23 },
+    { id: 5, name: "Vijay", age: 21 }
+];
+
+const filterStudents = (students) => {
+    return students.filter((student) => student.age >= 21);
+}
+
+console.log(filterStudents(students));
