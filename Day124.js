@@ -39,3 +39,56 @@ let updatedProducts = products.map(product => {
 console.log(updatedProducts);
 
 
+// Question 2 – Extract Employee Names and Calculate Bonus
+// Concept: map(), Objects, Conditional Logic, Arithmetic Operations.
+// You are given an array of employees. Each employee has an ID, name, and salary.
+// Your task is to create a new array containing each employee's name and bonus.
+// Bonus condition:
+// - Salary greater than or equal to ₹30,000 → 10% bonus.
+// - Salary less than ₹30,000 → 5% bonus.
+// Input:
+// let employees = [
+//     { id: 101, name: "Arun", salary: 25000 },
+//     { id: 102, name: "Kumar", salary: 40000 },
+//     { id: 103, name: "Ravi", salary: 20000 },
+//     { id: 104, name: "Suresh", salary: 50000 }
+// ];
+// Expected Output:
+// [
+//     { name: "Arun", bonus: 1250 },
+//     { name: "Kumar", bonus: 4000 },
+//     { name: "Ravi", bonus: 1000 },
+//     { name: "Suresh", bonus: 5000 }
+// ]
+// Requirements:
+// 1. Create an array named employees.
+// 2. Use map() to process every employee.
+// 3. Check the employee's salary using an if...else condition.
+// 4. If salary is greater than or equal to 30000, calculate a 10% bonus.
+// 5. Otherwise, calculate a 5% bonus.
+// 6. Return a new object containing only name and bonus.
+// 7. Store the result in employeeBonuses.
+// 8. Print employeeBonuses using console.log().
+
+let employees = [
+    { id: 101, name: "Arun", salary: 25000 },
+    { id: 102, name: "Kumar", salary: 40000 },
+    { id: 103, name: "Ravi", salary: 20000 },
+    { id: 104, name: "Suresh", salary: 50000 }
+];
+
+let employeeBonuses = employees.map(employee => {
+    let bonus;
+
+    if (employee.salary >= 30000) {
+        bonus = employee.salary * 10 / 100;
+    } else {
+        bonus = employee.salary * 5 / 100;
+    }
+    return {
+        name: employee.name,
+        bonus: bonus
+    }
+});
+
+console.log(employeeBonuses);
