@@ -51,3 +51,90 @@ productPromise
 })
 
 
+// Question 2 – Get Student Results Using Promise.all()
+// Concept: Multiple Promises, Promise.all(), .then(), .catch(), for...of, Objects.
+// You are given three student objects. Create separate Promises for each student and retrieve all student results together.
+// Input:
+// let student1 = {
+//     id: 101,
+//     name: "Arun",
+//     marks: 85
+// };
+// let student2 = {
+//     id: 102,
+//     name: "Kumar",
+//     marks: 45
+// };
+// let student3 = {
+//     id: 103,
+//     name: "Ravi",
+//     marks: 92
+// };
+// Expected Output:
+// All student results fetched successfully
+// ID: 101, Name: Arun, Marks: 85, Result: Pass
+// ID: 102, Name: Kumar, Marks: 45, Result: Pass
+// ID: 103, Name: Ravi, Marks: 92, Result: Pass
+// Requirements:
+// 1. Create three separate Promises named promise1, promise2, and promise3.
+// 2. Each Promise must resolve with its corresponding student object.
+// 3. Use Promise.all() to combine all three Promises.
+// 4. Use .then() to receive all student objects in an array.
+// 5. Print "All student results fetched successfully".
+// 6. Use a for...of loop to iterate through the students.
+// 7. Check each student's marks:
+//    - Marks greater than or equal to 40 → Pass.
+//    - Marks less than 40 → Fail.
+// 8. Print ID, name, marks, and result.
+// 9. Use .catch() to handle Promise rejection.
+
+let student1 = {
+    id: 101,
+    name: "Arun",
+    marks: 85
+};
+
+let student2 = {
+    id: 102,
+    name: "Kumar",
+    marks: 45
+};
+
+let student3 = {
+    id: 103,
+    name: "Ravi",
+    marks: 92
+};
+
+const promise1 = new Promise((resolve, reject) => {
+    resolve(student1);
+})
+
+const promise2 = new Promise((resolve, reject) => {
+    resolve(student2);
+})
+
+const promise3 = new Promise((resolve, reject) => {
+    resolve(student3);
+})
+
+Promise.all([promise1, promise2, promise3])
+.then((results) => {
+    console.log("All student results fetched successfully");
+    
+    for(let result of results){
+        let status;
+
+        if (result.marks >= 40) {
+            status = "Pass";
+        }
+        else {
+            status = "Fail";
+        }
+
+        console.log(`ID: ${result.id}, Name: ${result.name}, Marks: ${result.marks}, Result: ${status}`)
+    }
+})
+.catch((error) => {
+    console.log(error);
+})
